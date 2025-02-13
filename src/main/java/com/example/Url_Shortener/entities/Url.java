@@ -8,7 +8,7 @@ import org.hibernate.annotations.ColumnDefault;
 
 
 @Entity
-@Table(name = "urls")
+@Table(name = "urls",indexes = @Index(columnList = "hash",unique = true,name = "hash_index"))
 @Timestamp
 @Getter
 @NoArgsConstructor
@@ -17,9 +17,9 @@ import org.hibernate.annotations.ColumnDefault;
 public class Url {
     @Id()
     private Long id;
-    @Column(name = "url",nullable = false)
+    @Column(name = "url",nullable = false,unique = true)
     private String url;
-    @Column(name = "hash", nullable = false)
+    @Column(name = "hash", nullable = false,unique = true)
     private String hash;
     @Column(name = "clicks")
     private Long clicks ;

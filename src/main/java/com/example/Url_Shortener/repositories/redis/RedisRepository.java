@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface RedisRepository {
    <T> T  executeScript(RedisScript<T> redisScript, List<String> keys, String... args) ;
+   String getUrlFromCache();
 
 }

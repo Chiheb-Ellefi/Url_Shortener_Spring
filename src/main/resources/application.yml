@@ -1,5 +1,7 @@
+server:
+  port: 5000
 spring:
-  application: 
+  application:
     name: Url_Shortener
     id_gen_service: http://localhost:80
 
@@ -13,7 +15,7 @@ spring:
       port: 9000
   jpa:
     hibernate:
-      ddl_auto: create-drop
+      ddl_auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect

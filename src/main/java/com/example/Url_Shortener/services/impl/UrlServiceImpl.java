@@ -5,6 +5,7 @@ import com.example.Url_Shortener.entities.Url;
 import com.example.Url_Shortener.mappers.UrlMapper;
 import com.example.Url_Shortener.repositories.UrlRepository;
 import com.example.Url_Shortener.services.UrlService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,5 +25,11 @@ public class UrlServiceImpl implements UrlService {
     public UrlDto getOne(String  hash){
         Url response=urlRepository.findByHash(hash);
         return UrlMapper.toDto(response);
+    }
+
+    @Override
+    @Transactional
+    public void updateClicks(String hash , Long count) {
+        urlRepository.updateCountByHash(hash,count);
     }
 }

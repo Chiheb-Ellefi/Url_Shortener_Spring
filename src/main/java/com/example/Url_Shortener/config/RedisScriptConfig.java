@@ -12,14 +12,28 @@ public class RedisScriptConfig {
     RedisScript<String> getUrl(){
         DefaultRedisScript<String> script=new DefaultRedisScript<String>() ;
         script.setResultType(String.class);
-        script.setLocation(new ClassPathResource("scripts/"));
+        script.setLocation(new ClassPathResource("scripts/getUrlScript.lua"));
+        return script;
+    }
+    @Bean
+    RedisScript<String> setUrl(){
+        DefaultRedisScript<String> script=new DefaultRedisScript<String>() ;
+        script.setResultType(String.class);
+        script.setLocation(new ClassPathResource("scripts/setUrlScript.lua"));
+        return script;
+    }
+    @Bean
+    RedisScript<String> deleteUrl(){
+        DefaultRedisScript<String> script=new DefaultRedisScript<String>() ;
+        script.setResultType(String.class);
+        script.setLocation(new ClassPathResource("scripts/setUrlScript.lua"));
         return script;
     }
     @Bean
     RedisScript<Long> updateCount(){
         DefaultRedisScript<Long> script=new DefaultRedisScript<Long>() ;
         script.setResultType(Long.class);
-        script.setLocation(new ClassPathResource("scripts/"));
+        script.setLocation(new ClassPathResource("scripts/getClicks.lua"));
         return script;
     }
 }

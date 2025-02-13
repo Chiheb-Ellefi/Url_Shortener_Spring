@@ -20,6 +20,11 @@ public class RedisRepositoryImpl implements  RedisRepository{
 
     @Override
     public <T> T executeScript(RedisScript<T> redisScript, List<String> keys,String... args) {
-        return redisTemplate.execute(redisScript,keys, (Object) args);
+        return redisTemplate.execute(redisScript,keys, (Object[]) args);
+    }
+
+    @Override
+    public String getUrlFromCache() {
+       return redisTemplate.opsForValue().get("urls");
     }
 }
