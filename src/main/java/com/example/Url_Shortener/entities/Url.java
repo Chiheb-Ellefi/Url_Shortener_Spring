@@ -1,10 +1,9 @@
 package com.example.Url_Shortener.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import jdk.jfr.Timestamp;
 import lombok.*;
-import org.hibernate.annotations.ColumnDefault;
 
 
 @Entity
