@@ -9,7 +9,7 @@ The system is divided into multiple services/components:
 1. **UID Generator Service**
    - A Spring Boot microservice that generates unique IDs.
    - Ensures scalability and uniqueness across requests.
-   - 🔗 [View UID Generator Repo](https://github.com/Chiheb-Ellefi/Unique_ID_Generator)
+   - 🔗 [View UID Generator Repo](https://github.com/Chiheb-Ellefi/Unique_Id_Gen)
 
 2. **URL Shortener Service**
    - Accepts a long URL, fetches a unique ID, hashes it, and returns a short URL.
@@ -36,7 +36,6 @@ The system is divided into multiple services/components:
 | Caching & Pub/Sub | Redis                |
 | Background Tasks  | Spring Scheduled Tasks (cron) |
 | AOP               | Spring AOP           |
-| Containerization  | Docker Compose       |
 
 ---
 
@@ -57,18 +56,3 @@ The system is divided into multiple services/components:
 3. **Cache Invalidation**
    - A scheduled cron job runs at fixed intervals to evict or refresh stale Redis cache keys.
 
----
-
-## 🐳 Run with Docker Compose
-
-### Prerequisites
-
-- Docker
-- Docker Compose
-
-### Run the project
-
-```bash
-git clone https://github.com/yourusername/url-shortener-system.git
-cd url-shortener-system
-docker-compose up --build
